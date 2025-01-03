@@ -50,3 +50,15 @@ jobs:
         run: |
           docker pull puneetnj/express_react_fe:latest
           docker image inspect puneetnj/express_react_fe:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo docker pull puneetnj/express_react_be:latest
+            sudo docker stop express_react_be || true
+            sudo docker rm express_react_be || true
+            sudo docker run -d --name express_react_be -p 3500:3500 puneetnj/express_react_be:latest
