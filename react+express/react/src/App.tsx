@@ -12,7 +12,8 @@ function App() {
 
 	return (
 		<div>
-			The data is: <b>{data}</b> <div>This is to test ci pipeline</div>
+			The data is: <b>{data}</b>
+			<div>This is to test ci pipeline</div>
 		</div>
 	);
 }
