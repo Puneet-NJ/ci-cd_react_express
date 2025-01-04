@@ -13,6 +13,7 @@ function App() {
 	return (
 		<div>
 			The data is: <b>{data}</b>
+			<div>This is to check cd for ec2</div>
 		</div>
 	);
 }
