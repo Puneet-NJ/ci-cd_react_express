@@ -5,7 +5,7 @@ function App() {
 	const [data, setData] = useState("");
 
 	useEffect(() => {
-		fetch("http://13.232.253.155:3500/")
+		fetch("https://app-express-react-be.puneetnj.fun/")
 			.then((res) => res.json())
 			.then((data) => setData(data.msg));
 	}, []);
