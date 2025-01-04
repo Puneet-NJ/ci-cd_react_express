@@ -5,7 +5,7 @@ function App() {
 	const [data, setData] = useState("");
 
 	useEffect(() => {
-		fetch("http://localhost:3500/")
+		fetch("http://13.232.253.155:3500/")
 			.then((res) => res.json())
 			.then((data) => setData(data.msg));
 	}, []);
